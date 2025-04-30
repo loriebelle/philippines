@@ -1,7 +1,53 @@
 @import "tailwindcss";
 
+/* Ensure smooth scrolling */
+.scroll-smooth {
+    scroll-behavior: smooth;
+}
+
+/* Prevent showing the default scrollbar */
+::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar for Webkit browsers */
+}
+
+/* Hide scrollbar in other browsers */
+.scrollable-container {
+    -ms-overflow-style: none;
+    /* Hide scrollbar in IE/Edge */
+    scrollbar-width: none;
+    /* Hide scrollbar in Firefox */
+}
+
+body {
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: #F3F3F3;
+}
+
+img,
+a {
+    user-drag: none;
+    -webkit-user-drag: none;
+    /* Stops default dragging */
+}
+
+button {
+    cursor: pointer;
+    /* Ensures it's clickable */
+}
+
 .line {
     height: 2px;
     background-color: #8D8B13;
     flex-grow: 1;
+}
+
+/* Nav event handlers */
+.grabbing {
+    cursor: grabbing;
+}
+
+.grab {
+    cursor: grab;
 }
