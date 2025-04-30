@@ -39,22 +39,33 @@ function Nav() {
     <>
       {/* Toggle Button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-0 left-1/2 transform -translate-x-1/2 z-[9999] p-4 transition-transform duration-700 ease-in-out
-        ${isOpen ? "rotate-180" : ""}`}
-      >
-        <div className="relative w-20 h-20 md:w-24 md:h-24">
-          <img
-            src={isOpen ? navCloseIcon : navIcon}
-            alt={isOpen ? "Close nav" : "Open nav"}
-            className="absolute inset-0 w-full transition-opacity duration-500 ease-in-out"
-          />
-        </div>
-      </button>
+  onClick={() => setIsOpen(!isOpen)}
+  className={`fixed bottom-5 left-1/2 transform -translate-x-1/2 z-[9999]
+              w-20 h-20 md:w-23 md:h-23 rounded-full shadow-xl overflow-hidden transition-all duration-500 ease-in-out hover:scale-105`}
+>
+  {/* Wrapper to fade icons */}
+  <div className="relative w-full h-full">
+    <img
+      src={navIcon}
+      alt="Open nav"
+      className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-in-out ${
+        isOpen ? "opacity-0" : "opacity-100"
+      }`}
+    />
+    <img
+      src={navCloseIcon}
+      alt="Close nav"
+      className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-in-out ${
+        isOpen ? "opacity-100" : "opacity-0"
+      }`}
+    />
+  </div>
+</button>
+
 
       {/* Fullscreen Navigation Overlay */}
       <div
-        className={`fixed top-0 left-0 w-full h-full bg-[#F3F3F3] z-[9998] transition-transform duration-700 ease-in-out
+        className={`fixed top-0 left-0 w-full h-full bg-[#F3F3F3] z-[9998] transition-transform duration-800 ease-in-out
         ${isOpen ? "translate-y-0" : "translate-y-full"}
         flex flex-col items-center justify-center px-5 md:px-30`}
       >
@@ -135,6 +146,5 @@ function NavItem({ to, label, image, dragState, onClick }) {
     </Link>
   );
 }
-
 
 export default Nav;

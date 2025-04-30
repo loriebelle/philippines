@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
 
 html {
     box-sizing: border-box;
 }
-/* Ensure smooth scrolling */
+
+body {
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: #F3F3F3;
+}
+
 .scroll-smooth {
     scroll-behavior: smooth;
 }
@@ -22,12 +29,16 @@ html {
     /* Hide scrollbar in Firefox */
 }
 
-body {
-    user-select: none;
-    -webkit-user-select: none;
-    background-color: #F3F3F3;
+/* Nav event handlers */
+.grabbing {
+    cursor: grabbing;
 }
 
+.grab {
+    cursor: grab;
+}
+
+/* Elements */
 img,
 a {
     user-drag: none;
@@ -38,19 +49,62 @@ a {
 button {
     cursor: pointer;
     /* Ensures it's clickable */
+    border: none;
 }
 
+/* Custom text colors */
+.text-maroonish {
+    color: #810303;
+}
+
+.text-blueish {
+    color: #024BB4;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Allura', cursive;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+@media (min-width:50rem) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.13rem;
+    }
+}
+
+/* Custom */
 .line {
     height: 2px;
     background-color: #8D8B13;
-    /* flex-grow: 1; */
-}
-
-/* Nav event handlers */
-.grabbing {
-    cursor: grabbing;
-}
-
-.grab {
-    cursor: grab;
 }
