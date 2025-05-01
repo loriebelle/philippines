@@ -1,7 +1,7 @@
 function Culture() {
   return (
     <>
-      <section className="hero text-center gap-5">
+      <section className="hero flex-col text-center gap-5">
         <h1 className="text-blueish">Culture and Traditions</h1>
         <p>
           The Philippines is a country rich in culture and traditions shaped by

@@ -1,6 +1,6 @@
 function Home() {
   return (
-<section className="hero gap-5 px-6 md:px-16">
+<section className="hero flex-col gap-5 px-6 md:px-16">
   <div className="text-center md:w-1/2 flex flex-col justify-center items-center">
     <h1 className="text-maroonish mb-2">Philippines at a Glance</h1>
     <p className="text-gray-600">Archipelago of Beauty and History</p>
