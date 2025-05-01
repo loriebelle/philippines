@@ -65,14 +65,14 @@ function Nav() {
 
       {/* Fullscreen Navigation Overlay */}
       <div
-        className={`fixed top-0 left-0 w-full h-full bg-[#F3F3F3] z-[9998] transition-transform duration-800 ease-in-out
+        className={`fixed top-0 left-0 w-full h-full bg-[#E6E6E6] z-[9998] transition-transform duration-800 ease-in-out
         ${isOpen ? "translate-y-0" : "translate-y-full"}
         flex flex-col items-center justify-center px-5 md:px-30`}
       >
         {/* Horizontal Scrollable Nav */}
         <div
           ref={scrollRef}
-          className="px-4 py-4 w-full overflow-x-auto overflow-y-hidden select-none"
+          className="nav px-4 py-4 w-full overflow-x-auto overflow-y-hidden select-none"
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseUp}

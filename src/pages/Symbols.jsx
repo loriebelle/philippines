@@ -1,8 +1,8 @@
 function Symbols() {
   return (
     <>
-      <section>
-        <h1>National Symbols</h1>
+      <section className="hero text-center gap-5">
+        <h1 className="text-maroonish">National Symbols</h1>
         <p>
           The national symbols of the Philippines represent the country's
           identity, culture, and heritage.

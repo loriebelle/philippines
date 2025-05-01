@@ -1,6 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
 
+/* Works for Webkit browsers (Chrome, Safari) */
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
+/* Works for Firefox */
+.nav {
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE and Edge */
+  overflow: auto;               /* Ensure scrolling is still allowed */
+}
+
 html {
     box-sizing: border-box;
 }
@@ -11,23 +23,28 @@ body {
     background-color: #F3F3F3;
 }
 
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1rem 2rem;
+}
+
+.hero {
+    height: calc(100vh - 200px);
+}
+
+@media (min-width:50rem) {
+    .hero {
+        height: calc(100vh - 180px);
+    }
+}
+
 .scroll-smooth {
     scroll-behavior: smooth;
 }
 
-/* Prevent showing the default scrollbar */
-::-webkit-scrollbar {
-    display: none;
-    /* Hide scrollbar for Webkit browsers */
-}
-
-/* Hide scrollbar in other browsers */
-.scrollable-container {
-    -ms-overflow-style: none;
-    /* Hide scrollbar in IE/Edge */
-    scrollbar-width: none;
-    /* Hide scrollbar in Firefox */
-}
 
 /* Nav event handlers */
 .grabbing {
@@ -75,6 +92,8 @@ h6 {
 
 p {
     font-family: 'Poppins', sans-serif;
+    max-width: 60ch;
+    font-size: .875rem;
 }
 
 h1 {
@@ -85,8 +104,10 @@ h2 {
     font-size: 2rem;
 }
 
-p {
-    font-size: 1rem;
+@media (min-width:40rem) {
+    p {
+        font-size: 1rem;
+    }
 }
 
 @media (min-width:50rem) {
@@ -107,4 +128,114 @@ p {
 .line {
     height: 2px;
     background-color: #8D8B13;
+}
+
+.headline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media(min-width: 50rem) {
+    .headline {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+/* Culture Grids */
+.grid {
+    display: grid;
+    gap: .3rem;
+    padding-top: 1rem;
+}
+
+.grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: .3rem;
+}
+
+/* Bayanihan */
+.bayanihan-grid,
+.hospitality-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+@media (min-width:50rem) {
+    .grid {
+        gap: .5rem;
+    }
+
+    .grid img {
+        border-radius: .5rem;
+    }
+
+    /* Bayanihan */
+    .bayanihan-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+    }
+
+    .bayanihan-grid img:nth-child(1),
+    .hospitality-grid img:nth-child(1) {
+        grid-row: 1 / span 2;
+        grid-column: 1;
+    }
+
+    .bayanihan-grid img:nth-child(2) {
+        grid-row: 1;
+        grid-column: 2;
+        aspect-ratio: 4 / 2;
+    }
+
+    .bayanihan-grid img:nth-child(3) {
+        grid-row: 2;
+        grid-column: 2;
+        aspect-ratio: 4 / 2;
+    }
+
+    .bayanihan-grid img:nth-child(4) {
+        grid-row: 1 / span 2;
+        grid-column: 3;
+    }
+
+    /* Hospitality */
+    .hospitality-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .hospitality-grid img:nth-child(2) {
+        grid-row: 1 / span 2;
+        grid-column: 2;
+    }
+
+    .hospitality-grid img:nth-child(3) {
+        grid-row: 1;
+        grid-column: 3;
+        aspect-ratio: 4 / 2;
+    }
+
+    .hospitality-grid img:nth-child(4) {
+        grid-row: 2;
+        grid-column: 3;
+        aspect-ratio: 4 / 2;
+    }
+
+    /* Respect */
+    .respect-grid {
+        padding-top: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .respect-grid img {
+        aspect-ratio: 4 / 3;
+    }
 }
