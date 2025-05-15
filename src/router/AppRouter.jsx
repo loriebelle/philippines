@@ -12,8 +12,8 @@ function AppRouter() {
     <BrowserRouter>
     <div className="site-container relative">
       <Header />
-      <Nav />
       <main>
+      <Nav />
         <Routes>
           <Route path="/" element= {<Home />} />
           <Route path="/culture" element= {<Culture />} />
