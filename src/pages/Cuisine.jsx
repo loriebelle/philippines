@@ -32,8 +32,6 @@ function Cuisine() {
       <section className="street-foods flex-col">
         <p className="text-center py-2">Explore iconic street-side bites that define local flavor—from skewers to deep-fried delights.</p>
         <CuisineGallery images={streetFoods} />
-        <p className="text-center p-4">The soul of Filipino meals: savory, saucy, and perfect with rice.</p>
-
       </section>
     </>
   );
