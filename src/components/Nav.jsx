@@ -108,13 +108,6 @@ function Nav() {
               dragState={dragState}
               onClick={() => setIsOpen(false)}
             />
-            <NavItem
-              to="/landmarks"
-              label="Wonders & Landmarks"
-              image="/media/wonders.jpg"
-              dragState={dragState}
-              onClick={() => setIsOpen(false)}
-            />
           </div>
         </div>
       </div>
