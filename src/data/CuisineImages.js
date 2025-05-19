@@ -3,7 +3,7 @@ export const streetFoods = [
     { src: "media/isaw.jpg", alt: "Isaw being grilled" },
     { src: "media/grilling-meat.jpg", alt: "A person grilling eat" },
     { src: "media/kwek-kwek.jpg", alt: "Kwek kwek on a paper plate" },
-    { src: "media/street-foods.jpg", alt: "Street foods on trays" }
+    { src: "media/street-foods.jpg", alt: "Street foods on trays", className: "w-img" }
 ]
 
 export const mainDishes = [
@@ -22,7 +22,7 @@ export const desserts = [
     { src: "media/colored-puto.jpg", alt: "Colored Puto on a black plate"},
     { src: "media/puto.jpg", alt: "Puto on a wooden plate"},
     { src: "media/halo-halo.jpg", alt: "Halo-halo on a white bowl"},
-    { src: "media/buko-pandan.jpg", alt: "Buko Pandan on a glass bowl"},
-    { src: "media/mango-dessert.jpg", alt: "Mango Dessert on a glass cup"},
-    { src: "media/halo-halo-cup.jpg", alt: "Ube-Mango Halo-halo on a glass cup"}
+    { src: "media/mango-dessert.jpg", alt: "Mango Dessert on a glass cup", className: "w-img" },
+    { src: "media/buko-pandan.jpg", alt: "Buko Pandan on a glass bowl", className: "aspect-2.5/3"},
+    { src: "media/halo-halo-cup.jpg", alt: "Ube-Mango Halo-halo on a glass cup", className: "aspect-2.5/3"}
 ]

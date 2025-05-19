@@ -1,10 +1,9 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import navIcon from "../assets/nav-icon.svg";
 import navCloseIcon from "../assets/nav-close-icon.svg";
 
-function Nav() {
-  const [isOpen, setIsOpen] = useState(false);
+function Nav({ isOpen, setIsOpen }) {
   const scrollRef = useRef(null);
   const dragState = useRef({
     isDown: false,
@@ -12,6 +11,19 @@ function Nav() {
     scrollLeft: 0,
     moved: false,
   });
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("nav-open");
+    } else {
+      document.body.classList.remove("nav-open");
+    }
+
+    // Cleanup just in case
+    return () => {
+      document.body.classList.remove("nav-open");
+    };
+  }, [isOpen]);
 
   const handleMouseDown = (e) => {
     dragState.current.isDown = true;
@@ -39,33 +51,33 @@ function Nav() {
     <>
       {/* Toggle Button */}
       <button
-  onClick={() => setIsOpen(!isOpen)}
-  className={`fixed bottom-5 left-1/2 transform -translate-x-1/2 z-[9999]
-              w-20 h-20 md:w-23 md:h-23 rounded-full shadow-xl overflow-hidden transition-all duration-500 ease-in-out hover:scale-105`}
->
-  {/* Wrapper to fade icons */}
-  <div className="relative w-full h-full">
-    <img
-      src={navIcon}
-      alt="Open nav"
-      className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-in-out ${
-        isOpen ? "opacity-0" : "opacity-100"
-      }`}
-    />
-    <img
-      src={navCloseIcon}
-      alt="Close nav"
-      className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-in-out ${
-        isOpen ? "opacity-100" : "opacity-0"
-      }`}
-    />
-  </div>
-</button>
+        onClick={() => setIsOpen(!isOpen)}
+        className={`group fixed bottom-5 left-1/2 transform -translate-x-1/2 z-[9999]
+    w-20 h-20 md:w-23 md:h-23 rounded-full shadow-xl overflow-hidden transition-all duration-500 ease-in-out hover:scale-105`}
+      >
+        <div className="relative w-full h-full">
+          {/* Open Icon */}
+          <img
+            src={navIcon}
+            alt="Open nav"
+            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-in-out
+    ${isOpen ? "opacity-0" : "opacity-60 group-hover:opacity-100"}`}
+          />
 
+          {/* Close Icon */}
+          <img
+            src={navCloseIcon}
+            alt="Close nav"
+            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-300 ease-in-out
+        ${isOpen ? "opacity-100" : "opacity-0"}`}
+          />
+        </div>
+      </button>
 
       {/* Fullscreen Navigation Overlay */}
       <div
-        className={`fixed top-0 left-0 w-full h-full bg-[#E6E6E6] z-[9998] transition-transform duration-800 ease-in-out
+        className={`fixed top-0 left-0 w-full h-full bg-gradient-to-b from-[#F3F3F3] via-[#F5EBDC] to-[#E9D5C0]
+ z-[9998] transition-transform duration-800 ease-in-out
         ${isOpen ? "translate-y-0" : "translate-y-full"}
         flex flex-col items-center justify-center px-5 md:px-30`}
       >
@@ -128,9 +140,9 @@ function NavItem({ to, label, image, dragState, onClick }) {
     <Link
       to={to}
       className="flex-shrink-0 md:w-70 w-60 snap-start text-center no-underline text-black"
-      onClick={handleClick} // ✅ Use your custom click handler
+      onClick={handleClick}
     >
-      <span className="block text-lg font-semibold mb-2">{label}</span>
+      <span className="block text-lg font-medium mb-2">{label}</span>
       <img
         src={image}
         alt={label}
