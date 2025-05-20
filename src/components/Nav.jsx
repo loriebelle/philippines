@@ -95,28 +95,28 @@ function Nav({ isOpen, setIsOpen }) {
             <NavItem
               to="/"
               label="Home"
-              image="/media/home.jpg"
+              image="media/home.jpg"
               dragState={dragState}
               onClick={() => setIsOpen(false)}
             />
             <NavItem
               to="/culture"
               label="Culture & Traditions"
-              image="/media/culture.jpg"
+              image="media/culture.jpg"
               dragState={dragState}
               onClick={() => setIsOpen(false)}
             />
             <NavItem
               to="/symbols"
               label="National Symbols"
-              image="/media/symbols.jpg"
+              image="media/symbols.jpg"
               dragState={dragState}
               onClick={() => setIsOpen(false)}
             />
             <NavItem
               to="/cuisine"
               label="Filipino Cuisine"
-              image="/media/cuisine.jpg"
+              image="media/cuisine.jpg"
               dragState={dragState}
               onClick={() => setIsOpen(false)}
             />
